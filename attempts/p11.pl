@@ -4,14 +4,9 @@
 :- use_module(library(dcgs)).
 :- use_module(library(clpz)).
 /*
-list_encode(Xs, Ys) holds when Ys is the "encoded" version of Xs.
+list_encode(Xs, Ys) holds when Ys is the "other encoded" version of Xs.
 Does not generalize.
 
-?- list_encode("aaabbbcccddddaa", X).
-   X = [[3|"a"],[3|"b"],[3|"c"],[4|"d"],[2|"a"]]
-;  false.
-?- list_encode(X, [[4,a],[1,b],[2,c],[2,a],[1,d],[4,e]]).
-   loops.
 */
 
 % pack
@@ -22,10 +17,11 @@ transfer(X, [], [], [X]).
 transfer(X, [Y|Ys], [Y|Ys], [X]) :- dif(X, Y).
 transfer(X, [X|Xs], Ys, [X|Zs]) :- transfer(X, Xs, Ys, Zs).
 
-% Maybe if we think in reverse ...
+% in reverse ...
 repeat(0, _) --> [].
 repeat(N0, X) --> [X], { N #= N0 - 1 }, repeat(N, X).
-count_same([N, X], Xs) :- phrase(repeat(N,X), Xs).
+count_same([N, X], Xs) :- N #>= 2, phrase(repeat(N,X), Xs).
+count_same(X, [X]).  % just special case it
 
 list_encode(Xs, Ys) :-
   list_pack(Xs, Xs0),
