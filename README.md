@@ -1,4 +1,4 @@
-# 18/99 Prolog problems
+# 23/99 Prolog problems
 
 [99 prolog problems](https://www.ic.unicamp.br/~meidanis/courses/mc336/2009s2/prolog/problemas/), written as pure & monotonic as I can.
 
@@ -16,4 +16,4 @@ Install [scryler-prolog](https://www.scryer.pl), and run:
 scryer-prolog ./attempts/p${NUM}.pl
 ```
 
-But [try writing it yourself]((https://www.ic.unicamp.br/~meidanis/courses/mc336/2009s2/prolog/problemas/)) first.
+But [try it yourself]((https://www.ic.unicamp.br/~meidanis/courses/mc336/2009s2/prolog/problemas/)) first.
