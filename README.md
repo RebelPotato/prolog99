@@ -1,4 +1,4 @@
-# 26/99 Prolog problems
+# 27/99 Prolog problems
 
 [99 prolog problems](https://www.ic.unicamp.br/~meidanis/courses/mc336/2009s2/prolog/problemas/), written as pure & monotonic as I can.
 
